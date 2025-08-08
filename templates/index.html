@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breast Cancer Prediction</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Breast Cancer Prediction (Gradient Boosting)</h1>
+    <form method="POST" action="/predict">
+        <label>Mean Radius:</label>
+        <input type="text" name="mean_radius" required><br><br>
+
+        <label>Mean Texture:</label>
+        <input type="text" name="mean_texture" required><br><br>
+
+        <label>Mean Perimeter:</label>
+        <input type="text" name="mean_perimeter" required><br><br>
+
+        <label>Mean Area:</label>
+        <input type="text" name="mean_area" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
